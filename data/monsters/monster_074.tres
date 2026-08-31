@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 74
+monster_name = "マリンファング"
+description = "【第1形態】マリンファング。古代より伝わるマリンの力を宿すモンスター。"
+element = 2
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 1
+model_scale = Vector3(0.98, 0.98, 0.98)
+base_max_hp = 67
+base_max_mp = 40
+base_attack = 27
+base_defense = 23
+base_magic = 32
+base_speed = 25
+hunger_rate = 1.01
+energy_rate = 0.97
+favorite_food_type = 2
+evolution_ids = Array[int]([274])
+evolution_level_requirement = 15

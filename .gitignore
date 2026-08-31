@@ -1,17 +1,34 @@
 # Godot 4+ specific ignores
 .godot/
 .nomedia
-
-# Godot-specific ignores
 .import/
 export.cfg
 export_credentials.cfg
 *.tmp
-
-# Imported translations (automatically generated from CSV files)
 *.translation
 
-# Mono-specific ignores
+# Android & Build Artifacts
+build/
+bin/
+*.apk
+*.aab
+*.ap_
+*.keystore
+*.jks
+
+# Mono / C# specific ignores
 .mono/
-data_*/
 mono_crash.*.json
+
+# IDE / OS specific ignores
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+.DS_Store
+
+# Temporary Test captures
+screenshot_*.png
+screenshot_*.png.import
+*.log

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 300
+monster_name = "ライデンリッチキッド"
+description = "【第2形態】ライデンリッチキッド。古代より伝わるライデンの力を宿すモンスター。"
+element = 4
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn"}
+palette_index = 11
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 107
+base_max_mp = 61
+base_attack = 44
+base_defense = 32
+base_magic = 38
+base_speed = 42
+hunger_rate = 1.13
+energy_rate = 1.12
+favorite_food_type = 0
+evolution_ids = Array[int]([400])
+evolution_level_requirement = 30

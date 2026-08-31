@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 139
+monster_name = "フォレストピクシー"
+description = "【第1形態】フォレストピクシー。古代より伝わるフォレストの力を宿すモンスター。"
+element = 3
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 2
+model_scale = Vector3(1.02, 1.02, 1.02)
+base_max_hp = 81
+base_max_mp = 41
+base_attack = 24
+base_defense = 21
+base_magic = 24
+base_speed = 19
+hunger_rate = 1.1
+energy_rate = 0.82
+favorite_food_type = 3
+evolution_ids = Array[int]([339])
+evolution_level_requirement = 15

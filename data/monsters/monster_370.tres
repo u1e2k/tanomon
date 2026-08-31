@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 370
+monster_name = "フロストファングオメガ"
+description = "【第2形態】フロストファングオメガ。古代より伝わるフロストの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 1
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 102
+base_max_mp = 67
+base_attack = 40
+base_defense = 37
+base_magic = 42
+base_speed = 31
+hunger_rate = 0.98
+energy_rate = 0.91
+favorite_food_type = 2
+evolution_ids = Array[int]([470])
+evolution_level_requirement = 30

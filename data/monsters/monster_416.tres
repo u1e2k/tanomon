@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 416
+monster_name = "アビスピクシール"
+description = "【第3形態】アビスピクシール。古代より伝わるアビスの力を宿すモンスター。"
+element = 8
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn", "back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 7
+model_scale = Vector3(1.43, 1.43, 1.43)
+base_max_hp = 135
+base_max_mp = 77
+base_attack = 70
+base_defense = 48
+base_magic = 63
+base_speed = 38
+hunger_rate = 1.14
+energy_rate = 1.16
+favorite_food_type = 0
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

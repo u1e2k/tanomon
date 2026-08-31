@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 280
+monster_name = "ネクロタートルキング"
+description = "【第2形態】ネクロタートルキング。古代より伝わるネクロの力を宿すモンスター。"
+element = 8
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 7
+model_scale = Vector3(1.22, 1.22, 1.22)
+base_max_hp = 104
+base_max_mp = 52
+base_attack = 51
+base_defense = 31
+base_magic = 45
+base_speed = 30
+hunger_rate = 1.06
+energy_rate = 0.94
+favorite_food_type = 0
+evolution_ids = Array[int]([380])
+evolution_level_requirement = 30

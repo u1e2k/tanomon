@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 86
+monster_name = "エアロリッチ"
+description = "【第1形態】エアロリッチ。古代より伝わるエアロの力を宿すモンスター。"
+element = 6
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 5
+model_scale = Vector3(1.01, 1.01, 1.01)
+base_max_hp = 65
+base_max_mp = 34
+base_attack = 26
+base_defense = 18
+base_magic = 24
+base_speed = 25
+hunger_rate = 1.04
+energy_rate = 1.13
+favorite_food_type = 2
+evolution_ids = Array[int]([286])
+evolution_level_requirement = 15

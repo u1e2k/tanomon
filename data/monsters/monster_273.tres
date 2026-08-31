@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 273
+monster_name = "バーンタイガース"
+description = "【第2形態】バーンタイガース。古代より伝わるバーンの力を宿すモンスター。"
+element = 1
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 8
+model_scale = Vector3(1.24, 1.24, 1.24)
+base_max_hp = 107
+base_max_mp = 59
+base_attack = 51
+base_defense = 37
+base_magic = 37
+base_speed = 29
+hunger_rate = 0.92
+energy_rate = 1.18
+favorite_food_type = 1
+evolution_ids = Array[int]([373])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 34
+monster_name = "タイダルベア"
+description = "【第1形態】タイダルベア。古代より伝わるタイダルの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 1
+model_scale = Vector3(1.04, 1.04, 1.04)
+base_max_hp = 71
+base_max_mp = 45
+base_attack = 23
+base_defense = 22
+base_magic = 26
+base_speed = 19
+hunger_rate = 0.91
+energy_rate = 1.16
+favorite_food_type = 2
+evolution_ids = Array[int]([234])
+evolution_level_requirement = 15

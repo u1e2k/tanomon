@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 33
+monster_name = "クリムゾンポロン"
+description = "【第1形態】クリムゾンポロン。古代より伝わるクリムゾンの力を宿すモンスター。"
+element = 1
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {}
+palette_index = 8
+model_scale = Vector3(1.03, 1.03, 1.03)
+base_max_hp = 64
+base_max_mp = 37
+base_attack = 32
+base_defense = 20
+base_magic = 29
+base_speed = 25
+hunger_rate = 1.08
+energy_rate = 1.04
+favorite_food_type = 1
+evolution_ids = Array[int]([233])
+evolution_level_requirement = 15

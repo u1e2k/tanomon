@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 157
+monster_name = "クエイクノッコ"
+description = "【第1形態】クエイクノッコ。古代より伝わるクエイクの力を宿すモンスター。"
+element = 5
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 4
+model_scale = Vector3(1.01, 1.01, 1.01)
+base_max_hp = 63
+base_max_mp = 41
+base_attack = 24
+base_defense = 28
+base_magic = 28
+base_speed = 22
+hunger_rate = 1.13
+energy_rate = 1.07
+favorite_food_type = 1
+evolution_ids = Array[int]([357])
+evolution_level_requirement = 15

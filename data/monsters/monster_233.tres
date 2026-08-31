@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 233
+monster_name = "ヴォルカバットザー"
+description = "【第2形態】ヴォルカバットザー。古代より伝わるヴォルカの力を宿すモンスター。"
+element = 1
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_dragon.tscn"}
+palette_index = 0
+model_scale = Vector3(1.16, 1.16, 1.16)
+base_max_hp = 103
+base_max_mp = 56
+base_attack = 48
+base_defense = 36
+base_magic = 40
+base_speed = 27
+hunger_rate = 1.1
+energy_rate = 1.03
+favorite_food_type = 1
+evolution_ids = Array[int]([333])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 398
+monster_name = "ゲイルポロンザー"
+description = "【第2形態】ゲイルポロンザー。古代より伝わるゲイルの力を宿すモンスター。"
+element = 6
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {}
+palette_index = 5
+model_scale = Vector3(1.18, 1.18, 1.18)
+base_max_hp = 108
+base_max_mp = 57
+base_attack = 47
+base_defense = 34
+base_magic = 40
+base_speed = 42
+hunger_rate = 1.14
+energy_rate = 0.99
+favorite_food_type = 2
+evolution_ids = Array[int]([498])
+evolution_level_requirement = 30

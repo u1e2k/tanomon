@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 375
+monster_name = "セレスドラコゴン"
+description = "【第2形態】セレスドラコゴン。古代より伝わるセレスの力を宿すモンスター。"
+element = 7
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 14
+model_scale = Vector3(1.18, 1.18, 1.18)
+base_max_hp = 99
+base_max_mp = 54
+base_attack = 38
+base_defense = 40
+base_magic = 47
+base_speed = 33
+hunger_rate = 0.88
+energy_rate = 1.13
+favorite_food_type = 3
+evolution_ids = Array[int]([475])
+evolution_level_requirement = 30

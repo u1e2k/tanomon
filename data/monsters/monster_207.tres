@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 207
+monster_name = "シャインモグス"
+description = "【第2形態】シャインモグス。古代より伝わるシャインの力を宿すモンスター。"
+element = 7
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 14
+model_scale = Vector3(1.16, 1.16, 1.16)
+base_max_hp = 107
+base_max_mp = 57
+base_attack = 45
+base_defense = 41
+base_magic = 48
+base_speed = 35
+hunger_rate = 0.86
+energy_rate = 1.17
+favorite_food_type = 3
+evolution_ids = Array[int]([307])
+evolution_level_requirement = 30

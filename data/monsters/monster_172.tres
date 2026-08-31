@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 172
+monster_name = "ライデンビースト"
+description = "【第1形態】ライデンビースト。古代より伝わるライデンの力を宿すモンスター。"
+element = 4
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 3
+model_scale = Vector3(1.01, 1.01, 1.01)
+base_max_hp = 62
+base_max_mp = 40
+base_attack = 28
+base_defense = 19
+base_magic = 22
+base_speed = 29
+hunger_rate = 1.15
+energy_rate = 0.82
+favorite_food_type = 0
+evolution_ids = Array[int]([372])
+evolution_level_requirement = 15

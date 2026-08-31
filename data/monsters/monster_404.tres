@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 404
+monster_name = "ライトニペガサスス"
+description = "【第3形態】ライトニペガサスス。古代より伝わるライトニの力を宿すモンスター。"
+element = 4
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn", "back": "res://assets/models/parts/wings_angel.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 3
+model_scale = Vector3(1.36, 1.36, 1.36)
+base_max_hp = 139
+base_max_mp = 75
+base_attack = 58
+base_defense = 42
+base_magic = 55
+base_speed = 63
+hunger_rate = 0.88
+energy_rate = 1.07
+favorite_food_type = 0
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

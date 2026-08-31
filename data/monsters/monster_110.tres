@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 110
+monster_name = "テンペストタートル"
+description = "【第1形態】テンペストタートル。古代より伝わるテンペストの力を宿すモンスター。"
+element = 6
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 5
+model_scale = Vector3(0.99, 0.99, 0.99)
+base_max_hp = 66
+base_max_mp = 41
+base_attack = 29
+base_defense = 22
+base_magic = 22
+base_speed = 27
+hunger_rate = 0.91
+energy_rate = 1.03
+favorite_food_type = 2
+evolution_ids = Array[int]([310])
+evolution_level_requirement = 15

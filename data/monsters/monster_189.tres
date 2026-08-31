@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 189
+monster_name = "バサルトバット"
+description = "【第1形態】バサルトバット。古代より伝わるバサルトの力を宿すモンスター。"
+element = 5
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_dragon.tscn"}
+palette_index = 12
+model_scale = Vector3(1.03, 1.03, 1.03)
+base_max_hp = 71
+base_max_mp = 34
+base_attack = 28
+base_defense = 27
+base_magic = 23
+base_speed = 20
+hunger_rate = 1.12
+energy_rate = 0.89
+favorite_food_type = 1
+evolution_ids = Array[int]([389])
+evolution_level_requirement = 15

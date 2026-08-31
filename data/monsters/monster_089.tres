@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 89
+monster_name = "サラマンワイバーン"
+description = "【第1形態】サラマンワイバーン。古代より伝わるサラマンの力を宿すモンスター。"
+element = 1
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 0
+model_scale = Vector3(1.03, 1.03, 1.03)
+base_max_hp = 70
+base_max_mp = 32
+base_attack = 32
+base_defense = 18
+base_magic = 24
+base_speed = 24
+hunger_rate = 1.01
+energy_rate = 0.98
+favorite_food_type = 1
+evolution_ids = Array[int]([289])
+evolution_level_requirement = 15

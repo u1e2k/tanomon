@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 209
+monster_name = "バーングリフドン"
+description = "【第2形態】バーングリフドン。古代より伝わるバーンの力を宿すモンスター。"
+element = 1
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 0
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 97
+base_max_mp = 58
+base_attack = 52
+base_defense = 30
+base_magic = 43
+base_speed = 31
+hunger_rate = 1.19
+energy_rate = 1.11
+favorite_food_type = 1
+evolution_ids = Array[int]([309])
+evolution_level_requirement = 30

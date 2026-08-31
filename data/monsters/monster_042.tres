@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 42
+monster_name = "オーシャンリッチ"
+description = "【第1形態】オーシャンリッチ。古代より伝わるオーシャンの力を宿すモンスター。"
+element = 2
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 9
+model_scale = Vector3(0.98, 0.98, 0.98)
+base_max_hp = 68
+base_max_mp = 42
+base_attack = 27
+base_defense = 21
+base_magic = 28
+base_speed = 17
+hunger_rate = 1.06
+energy_rate = 0.96
+favorite_food_type = 2
+evolution_ids = Array[int]([242])
+evolution_level_requirement = 15

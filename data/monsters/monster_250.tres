@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 250
+monster_name = "シレーヌゴブプライム"
+description = "【第2形態】シレーヌゴブプライム。古代より伝わるシレーヌの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn"}
+palette_index = 1
+model_scale = Vector3(1.18, 1.18, 1.18)
+base_max_hp = 104
+base_max_mp = 69
+base_attack = 45
+base_defense = 31
+base_magic = 49
+base_speed = 32
+hunger_rate = 1.17
+energy_rate = 0.95
+favorite_food_type = 2
+evolution_ids = Array[int]([350])
+evolution_level_requirement = 30

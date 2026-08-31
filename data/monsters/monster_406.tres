@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 406
+monster_name = "エアロタートルドン"
+description = "【第3形態】エアロタートルドン。古代より伝わるエアロの力を宿すモンスター。"
+element = 6
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 5
+model_scale = Vector3(1.37, 1.37, 1.37)
+base_max_hp = 131
+base_max_mp = 76
+base_attack = 63
+base_defense = 49
+base_magic = 55
+base_speed = 55
+hunger_rate = 1.16
+energy_rate = 1.2
+favorite_food_type = 2
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

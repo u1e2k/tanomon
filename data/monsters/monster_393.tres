@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 393
+monster_name = "マグマケルベプライム"
+description = "【第2形態】マグマケルベプライム。古代より伝わるマグマの力を宿すモンスター。"
+element = 1
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 8
+model_scale = Vector3(1.22, 1.22, 1.22)
+base_max_hp = 106
+base_max_mp = 56
+base_attack = 51
+base_defense = 32
+base_magic = 39
+base_speed = 27
+hunger_rate = 1.12
+energy_rate = 1.12
+favorite_food_type = 1
+evolution_ids = Array[int]([493])
+evolution_level_requirement = 30

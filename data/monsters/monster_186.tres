@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 186
+monster_name = "シレーヌモコ"
+description = "【第1形態】シレーヌモコ。古代より伝わるシレーヌの力を宿すモンスター。"
+element = 2
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 9
+model_scale = Vector3(1.0, 1.0, 1.0)
+base_max_hp = 69
+base_max_mp = 38
+base_attack = 27
+base_defense = 22
+base_magic = 32
+base_speed = 20
+hunger_rate = 1.2
+energy_rate = 0.91
+favorite_food_type = 2
+evolution_ids = Array[int]([386])
+evolution_level_requirement = 15

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 270
+monster_name = "ゲイルモグエンペラー"
+description = "【第2形態】ゲイルモグエンペラー。古代より伝わるゲイルの力を宿すモンスター。"
+element = 6
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 13
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 105
+base_max_mp = 57
+base_attack = 48
+base_defense = 30
+base_magic = 40
+base_speed = 41
+hunger_rate = 0.96
+energy_rate = 0.83
+favorite_food_type = 2
+evolution_ids = Array[int]([370])
+evolution_level_requirement = 30

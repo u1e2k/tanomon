@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 116
+monster_name = "プラズマケルベ"
+description = "【第1形態】プラズマケルベ。古代より伝わるプラズマの力を宿すモンスター。"
+element = 4
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 3
+model_scale = Vector3(1.0, 1.0, 1.0)
+base_max_hp = 68
+base_max_mp = 37
+base_attack = 27
+base_defense = 24
+base_magic = 27
+base_speed = 24
+hunger_rate = 1.07
+energy_rate = 0.99
+favorite_food_type = 0
+evolution_ids = Array[int]([316])
+evolution_level_requirement = 15

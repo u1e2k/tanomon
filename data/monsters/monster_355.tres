@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 355
+monster_name = "ブルームベアキッド"
+description = "【第2形態】ブルームベアキッド。古代より伝わるブルームの力を宿すモンスター。"
+element = 3
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 2
+model_scale = Vector3(1.22, 1.22, 1.22)
+base_max_hp = 117
+base_max_mp = 52
+base_attack = 38
+base_defense = 38
+base_magic = 38
+base_speed = 28
+hunger_rate = 1.14
+energy_rate = 1.14
+favorite_food_type = 3
+evolution_ids = Array[int]([455])
+evolution_level_requirement = 30

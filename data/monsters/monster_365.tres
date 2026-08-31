@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 365
+monster_name = "ストーンコロザー"
+description = "【第2形態】ストーンコロザー。古代より伝わるストーンの力を宿すモンスター。"
+element = 5
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 4
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 105
+base_max_mp = 59
+base_attack = 38
+base_defense = 48
+base_magic = 38
+base_speed = 33
+hunger_rate = 0.86
+energy_rate = 0.84
+favorite_food_type = 1
+evolution_ids = Array[int]([465])
+evolution_level_requirement = 30

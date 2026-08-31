@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 247
+monster_name = "セレスポロンキング"
+description = "【第2形態】セレスポロンキング。古代より伝わるセレスの力を宿すモンスター。"
+element = 7
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {}
+palette_index = 6
+model_scale = Vector3(1.18, 1.18, 1.18)
+base_max_hp = 106
+base_max_mp = 61
+base_attack = 38
+base_defense = 35
+base_magic = 49
+base_speed = 35
+hunger_rate = 0.89
+energy_rate = 0.88
+favorite_food_type = 3
+evolution_ids = Array[int]([347])
+evolution_level_requirement = 30

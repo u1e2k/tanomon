@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 337
+monster_name = "バーンモコオメガ"
+description = "【第2形態】バーンモコオメガ。古代より伝わるバーンの力を宿すモンスター。"
+element = 1
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 0
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 98
+base_max_mp = 55
+base_attack = 52
+base_defense = 34
+base_magic = 41
+base_speed = 33
+hunger_rate = 1.08
+energy_rate = 1.09
+favorite_food_type = 1
+evolution_ids = Array[int]([437])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 5
+monster_name = "ガイアクロウ"
+description = "【第1形態】ガイアクロウ。古代より伝わるガイアの力を宿すモンスター。"
+element = 5
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 4
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 62
+base_max_mp = 37
+base_attack = 28
+base_defense = 28
+base_magic = 22
+base_speed = 24
+hunger_rate = 1.01
+energy_rate = 1.19
+favorite_food_type = 1
+evolution_ids = Array[int]([205])
+evolution_level_requirement = 15

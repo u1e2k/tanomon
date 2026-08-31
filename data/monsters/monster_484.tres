@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 484
+monster_name = "エレクトラモグゴン"
+description = "【第3形態】エレクトラモグゴン。古代より伝わるエレクトラの力を宿すモンスター。"
+element = 4
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 3
+model_scale = Vector3(1.43, 1.43, 1.43)
+base_max_hp = 132
+base_max_mp = 76
+base_attack = 59
+base_defense = 46
+base_magic = 53
+base_speed = 55
+hunger_rate = 1.08
+energy_rate = 1.12
+favorite_food_type = 0
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

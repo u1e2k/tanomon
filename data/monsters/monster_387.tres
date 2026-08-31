@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 387
+monster_name = "リーフタートルザー"
+description = "【第2形態】リーフタートルザー。古代より伝わるリーフの力を宿すモンスター。"
+element = 3
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 10
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 116
+base_max_mp = 53
+base_attack = 42
+base_defense = 36
+base_magic = 42
+base_speed = 27
+hunger_rate = 0.87
+energy_rate = 1.03
+favorite_food_type = 3
+evolution_ids = Array[int]([487])
+evolution_level_requirement = 30

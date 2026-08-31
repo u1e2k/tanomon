@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 403
+monster_name = "シルフバットプライム"
+description = "【第3形態】シルフバットプライム。古代より伝わるシルフの力を宿すモンスター。"
+element = 3
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn"}
+palette_index = 2
+model_scale = Vector3(1.42, 1.42, 1.42)
+base_max_hp = 167
+base_max_mp = 73
+base_attack = 55
+base_defense = 57
+base_magic = 56
+base_speed = 43
+hunger_rate = 0.97
+energy_rate = 0.99
+favorite_food_type = 3
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

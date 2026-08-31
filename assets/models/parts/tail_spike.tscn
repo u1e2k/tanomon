@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://tail_spike_01"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spike"]
+albedo_color = Color(0.8, 0.35, 0.15, 1)
+roughness = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tail"]
+material = SubResource("StandardMaterial3D_spike")
+top_radius = 0.02
+bottom_radius = 0.08
+height = 0.6
+radial_segments = 6
+
+[node name="TailSpike" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, -0.1, -0.25)
+mesh = SubResource("CylinderMesh_tail")

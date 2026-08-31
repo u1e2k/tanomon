@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 290
+monster_name = "タイダルピクシーロード"
+description = "【第2形態】タイダルピクシーロード。古代より伝わるタイダルの力を宿すモンスター。"
+element = 2
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn", "back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 1
+model_scale = Vector3(1.23, 1.23, 1.23)
+base_max_hp = 104
+base_max_mp = 67
+base_attack = 44
+base_defense = 36
+base_magic = 43
+base_speed = 32
+hunger_rate = 0.94
+energy_rate = 0.98
+favorite_food_type = 2
+evolution_ids = Array[int]([390])
+evolution_level_requirement = 30

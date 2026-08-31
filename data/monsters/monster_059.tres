@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 59
+monster_name = "トレントタイガー"
+description = "【第1形態】トレントタイガー。古代より伝わるトレントの力を宿すモンスター。"
+element = 3
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 2
+model_scale = Vector3(1.03, 1.03, 1.03)
+base_max_hp = 78
+base_max_mp = 32
+base_attack = 29
+base_defense = 28
+base_magic = 22
+base_speed = 22
+hunger_rate = 0.92
+energy_rate = 0.96
+favorite_food_type = 3
+evolution_ids = Array[int]([259])
+evolution_level_requirement = 15

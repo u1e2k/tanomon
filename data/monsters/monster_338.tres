@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 338
+monster_name = "ハイドロゴブプライム"
+description = "【第2形態】ハイドロゴブプライム。古代より伝わるハイドロの力を宿すモンスター。"
+element = 2
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn"}
+palette_index = 1
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 100
+base_max_mp = 65
+base_attack = 39
+base_defense = 33
+base_magic = 44
+base_speed = 28
+hunger_rate = 0.86
+energy_rate = 0.87
+favorite_food_type = 2
+evolution_ids = Array[int]([438])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 173
+monster_name = "ストーンタートル"
+description = "【第1形態】ストーンタートル。古代より伝わるストーンの力を宿すモンスター。"
+element = 5
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 4
+model_scale = Vector3(0.99, 0.99, 0.99)
+base_max_hp = 66
+base_max_mp = 36
+base_attack = 23
+base_defense = 29
+base_magic = 23
+base_speed = 22
+hunger_rate = 0.9
+energy_rate = 1.06
+favorite_food_type = 1
+evolution_ids = Array[int]([373])
+evolution_level_requirement = 15

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 310
+monster_name = "ファルコンポロンザー"
+description = "【第2形態】ファルコンポロンザー。古代より伝わるファルコンの力を宿すモンスター。"
+element = 6
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {}
+palette_index = 5
+model_scale = Vector3(1.23, 1.23, 1.23)
+base_max_hp = 98
+base_max_mp = 52
+base_attack = 48
+base_defense = 34
+base_magic = 39
+base_speed = 41
+hunger_rate = 1.06
+energy_rate = 1.08
+favorite_food_type = 2
+evolution_ids = Array[int]([410])
+evolution_level_requirement = 30

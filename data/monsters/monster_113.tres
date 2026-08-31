@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 113
+monster_name = "ヒートノッコ"
+description = "【第1形態】ヒートノッコ。古代より伝わるヒートの力を宿すモンスター。"
+element = 1
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 0
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 65
+base_max_mp = 37
+base_attack = 34
+base_defense = 20
+base_magic = 25
+base_speed = 19
+hunger_rate = 1.11
+energy_rate = 1.15
+favorite_food_type = 1
+evolution_ids = Array[int]([313])
+evolution_level_requirement = 15

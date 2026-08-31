@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 368
+monster_name = "ノワールキマイラキング"
+description = "【第2形態】ノワールキマイラキング。古代より伝わるノワールの力を宿すモンスター。"
+element = 8
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 7
+model_scale = Vector3(1.21, 1.21, 1.21)
+base_max_hp = 103
+base_max_mp = 55
+base_attack = 47
+base_defense = 30
+base_magic = 47
+base_speed = 29
+hunger_rate = 1.06
+energy_rate = 1.19
+favorite_food_type = 0
+evolution_ids = Array[int]([468])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 266
+monster_name = "マリンパピーザー"
+description = "【第2形態】マリンパピーザー。古代より伝わるマリンの力を宿すモンスター。"
+element = 2
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 1
+model_scale = Vector3(1.2, 1.2, 1.2)
+base_max_hp = 99
+base_max_mp = 67
+base_attack = 44
+base_defense = 36
+base_magic = 44
+base_speed = 33
+hunger_rate = 0.83
+energy_rate = 1.05
+favorite_food_type = 2
+evolution_ids = Array[int]([366])
+evolution_level_requirement = 30

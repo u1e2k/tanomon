@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 308
+monster_name = "プラズマタモドン"
+description = "【第2形態】プラズマタモドン。古代より伝わるプラズマの力を宿すモンスター。"
+element = 4
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn"}
+palette_index = 3
+model_scale = Vector3(1.23, 1.23, 1.23)
+base_max_hp = 96
+base_max_mp = 53
+base_attack = 40
+base_defense = 37
+base_magic = 43
+base_speed = 39
+hunger_rate = 1.2
+energy_rate = 0.97
+favorite_food_type = 0
+evolution_ids = Array[int]([408])
+evolution_level_requirement = 30

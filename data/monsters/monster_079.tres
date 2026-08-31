@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 79
+monster_name = "シャインモコ"
+description = "【第1形態】シャインモコ。古代より伝わるシャインの力を宿すモンスター。"
+element = 7
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 6
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 61
+base_max_mp = 41
+base_attack = 27
+base_defense = 27
+base_magic = 34
+base_speed = 24
+hunger_rate = 0.94
+energy_rate = 1.19
+favorite_food_type = 3
+evolution_ids = Array[int]([279])
+evolution_level_requirement = 15

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 8
+monster_name = "ダークパピー"
+description = "【第1形態】ダークパピー。古代より伝わるダークの力を宿すモンスター。"
+element = 8
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 7
+model_scale = Vector3(1.01, 1.01, 1.01)
+base_max_hp = 72
+base_max_mp = 33
+base_attack = 29
+base_defense = 21
+base_magic = 28
+base_speed = 24
+hunger_rate = 0.95
+energy_rate = 1.2
+favorite_food_type = 0
+evolution_ids = Array[int]([208])
+evolution_level_requirement = 15

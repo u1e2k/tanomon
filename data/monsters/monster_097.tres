@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 97
+monster_name = "クリムゾンケルベ"
+description = "【第1形態】クリムゾンケルベ。古代より伝わるクリムゾンの力を宿すモンスター。"
+element = 1
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 0
+model_scale = Vector3(0.98, 0.98, 0.98)
+base_max_hp = 69
+base_max_mp = 34
+base_attack = 34
+base_defense = 21
+base_magic = 24
+base_speed = 18
+hunger_rate = 0.91
+energy_rate = 1.12
+favorite_food_type = 1
+evolution_ids = Array[int]([297])
+evolution_level_requirement = 15

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 12
+monster_name = "ボルトタモ"
+description = "【第1形態】ボルトタモ。古代より伝わるボルトの力を宿すモンスター。"
+element = 4
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 11
+model_scale = Vector3(1.0, 1.0, 1.0)
+base_max_hp = 73
+base_max_mp = 32
+base_attack = 24
+base_defense = 20
+base_magic = 24
+base_speed = 29
+hunger_rate = 1.04
+energy_rate = 0.95
+favorite_food_type = 0
+evolution_ids = Array[int]([212])
+evolution_level_requirement = 15

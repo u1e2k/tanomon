@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 258
+monster_name = "アクアコロキング"
+description = "【第2形態】アクアコロキング。古代より伝わるアクアの力を宿すモンスター。"
+element = 2
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 9
+model_scale = Vector3(1.21, 1.21, 1.21)
+base_max_hp = 100
+base_max_mp = 67
+base_attack = 42
+base_defense = 36
+base_magic = 43
+base_speed = 32
+hunger_rate = 1.18
+energy_rate = 0.98
+favorite_food_type = 2
+evolution_ids = Array[int]([358])
+evolution_level_requirement = 30

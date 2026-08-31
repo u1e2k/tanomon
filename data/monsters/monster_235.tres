@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 235
+monster_name = "ドリアードビーストロード"
+description = "【第2形態】ドリアードビーストロード。古代より伝わるドリアードの力を宿すモンスター。"
+element = 3
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 2
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 122
+base_max_mp = 58
+base_attack = 43
+base_defense = 42
+base_magic = 43
+base_speed = 33
+hunger_rate = 0.95
+energy_rate = 1.07
+favorite_food_type = 3
+evolution_ids = Array[int]([335])
+evolution_level_requirement = 30

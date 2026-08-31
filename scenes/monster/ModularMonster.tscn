@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://modular_monster_scene"]
+
+[ext_resource type="Script" path="res://scripts/monster/ModularMonster.gd" id="1_modular"]
+[ext_resource type="Texture2D" uid="uid://monster_palettes_tex" path="res://assets/palettes/monster_palettes.png" id="2_palette"]
+
+[node name="ModularMonster" type="Node3D"]
+script = ExtResource("1_modular")
+palette_texture = ExtResource("2_palette")

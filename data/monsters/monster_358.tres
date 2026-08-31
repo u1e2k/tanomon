@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 358
+monster_name = "ゼファーダイナエンペラー"
+description = "【第2形態】ゼファーダイナエンペラー。古代より伝わるゼファーの力を宿すモンスター。"
+element = 6
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 5
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 107
+base_max_mp = 56
+base_attack = 44
+base_defense = 32
+base_magic = 36
+base_speed = 41
+hunger_rate = 1.14
+energy_rate = 1.11
+favorite_food_type = 2
+evolution_ids = Array[int]([458])
+evolution_level_requirement = 30

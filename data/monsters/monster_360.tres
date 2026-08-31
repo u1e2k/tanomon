@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 360
+monster_name = "ファントムグリフプライム"
+description = "【第2形態】ファントムグリフプライム。古代より伝わるファントムの力を宿すモンスター。"
+element = 8
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 15
+model_scale = Vector3(1.18, 1.18, 1.18)
+base_max_hp = 101
+base_max_mp = 54
+base_attack = 47
+base_defense = 35
+base_magic = 51
+base_speed = 27
+hunger_rate = 0.91
+energy_rate = 0.9
+favorite_food_type = 0
+evolution_ids = Array[int]([460])
+evolution_level_requirement = 30

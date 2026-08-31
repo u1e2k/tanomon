@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 4
+monster_name = "サンダーナイト"
+description = "【第1形態】サンダーナイト。古代より伝わるサンダーの力を宿すモンスター。"
+element = 4
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn"}
+palette_index = 3
+model_scale = Vector3(1.02, 1.02, 1.02)
+base_max_hp = 72
+base_max_mp = 38
+base_attack = 28
+base_defense = 22
+base_magic = 24
+base_speed = 26
+hunger_rate = 1.18
+energy_rate = 0.93
+favorite_food_type = 0
+evolution_ids = Array[int]([204])
+evolution_level_requirement = 15

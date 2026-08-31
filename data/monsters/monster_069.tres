@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 69
+monster_name = "ガイアノッコ"
+description = "【第1形態】ガイアノッコ。古代より伝わるガイアの力を宿すモンスター。"
+element = 5
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 12
+model_scale = Vector3(0.96, 0.96, 0.96)
+base_max_hp = 67
+base_max_mp = 39
+base_attack = 24
+base_defense = 30
+base_magic = 27
+base_speed = 24
+hunger_rate = 1.08
+energy_rate = 0.97
+favorite_food_type = 1
+evolution_ids = Array[int]([269])
+evolution_level_requirement = 15

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 425
+monster_name = "ヴォルカガルプライム"
+description = "【第3形態】ヴォルカガルプライム。古代より伝わるヴォルカの力を宿すモンスター。"
+element = 1
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 0
+model_scale = Vector3(1.38, 1.38, 1.38)
+base_max_hp = 141
+base_max_mp = 78
+base_attack = 74
+base_defense = 45
+base_magic = 51
+base_speed = 44
+hunger_rate = 0.98
+energy_rate = 1.03
+favorite_food_type = 1
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

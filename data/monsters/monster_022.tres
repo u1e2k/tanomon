@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 22
+monster_name = "エアロタートル"
+description = "【第1形態】エアロタートル。古代より伝わるエアロの力を宿すモンスター。"
+element = 6
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 5
+model_scale = Vector3(1.03, 1.03, 1.03)
+base_max_hp = 70
+base_max_mp = 41
+base_attack = 32
+base_defense = 21
+base_magic = 29
+base_speed = 27
+hunger_rate = 0.88
+energy_rate = 0.84
+favorite_food_type = 2
+evolution_ids = Array[int]([222])
+evolution_level_requirement = 15

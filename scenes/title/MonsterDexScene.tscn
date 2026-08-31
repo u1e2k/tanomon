@@ -1,0 +1,329 @@
+[gd_scene load_steps=8 format=3 uid="uid://monster_dex_scene_01"]
+
+[ext_resource type="Script" path="res://scripts/title/MonsterDexScene.gd" id="1_dex"]
+[ext_resource type="PackedScene" uid="uid://modular_monster_scene" path="res://scenes/monster/ModularMonster.tscn" id="2_modular"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.08, 0.09, 0.14, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.12, 0.14, 0.2, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Environment" id="Environment_pedestal"]
+background_mode = 1
+background_color = Color(0.1, 0.12, 0.18, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.65, 0.65, 0.75, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pedestal"]
+top_radius = 1.2
+bottom_radius = 1.4
+height = 0.2
+radial_segments = 12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pedestal"]
+albedo_color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="MonsterDexScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dex")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 48.0
+offset_top = 10.0
+offset_right = -48.0
+offset_bottom = 38.0
+grow_horizontal = 2
+
+[node name="BackButton" type="Button" parent="Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "◀ もどる"
+
+[node name="TitleLabel" type="Label" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "【3D MONSTER DEX / モンスター図鑑 (全500体)】"
+horizontal_alignment = 1
+
+[node name="MainLayout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 44.0
+offset_right = -48.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="LeftListPanel" type="PanelContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="MainLayout/LeftListPanel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 222.0
+offset_bottom = 302.0
+
+[node name="ListHeader" type="Label" parent="MainLayout/LeftListPanel/VBox"]
+layout_mode = 2
+text = "■ 登録モンスター一覧"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainLayout/LeftListPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MonsterListContainer" type="VBoxContainer" parent="MainLayout/LeftListPanel/VBox/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Center3DPanel" type="PanelContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="MainLayout/Center3DPanel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 286.0
+offset_bottom = 302.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MainLayout/Center3DPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="MonsterSubViewport" type="SubViewport" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer"]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(278, 250)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer/MonsterSubViewport"]
+environment = SubResource("Environment_pedestal")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer/MonsterSubViewport"]
+transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 4, 0)
+light_color = Color(1, 0.98, 0.92, 1)
+
+[node name="Camera3D" type="Camera3D" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer/MonsterSubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.1, 2.6)
+fov = 46.0
+
+[node name="MonsterPivot" type="Node3D" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer/MonsterSubViewport"]
+unique_name_in_owner = true
+
+[node name="Pedestal" type="MeshInstance3D" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer/MonsterSubViewport/MonsterPivot"]
+mesh = SubResource("CylinderMesh_pedestal")
+surface_material_override/0 = SubResource("StandardMaterial3D_pedestal")
+
+[node name="ModularMonster" parent="MainLayout/Center3DPanel/VBox/SubViewportContainer/MonsterSubViewport/MonsterPivot" instance=ExtResource("2_modular")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="ControlsRow" type="HBoxContainer" parent="MainLayout/Center3DPanel/VBox"]
+layout_mode = 2
+
+[node name="PrevButton" type="Button" parent="MainLayout/Center3DPanel/VBox/ControlsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "◀ 前へ (L)"
+
+[node name="AnimButton" type="Button" parent="MainLayout/Center3DPanel/VBox/ControlsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "モーション: 待機中"
+
+[node name="NextButton" type="Button" parent="MainLayout/Center3DPanel/VBox/ControlsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "次へ (R) ▶"
+
+[node name="RightStatusPanel" type="PanelContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="MainLayout/RightStatusPanel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 302.0
+theme_override_constants/separation = 4
+
+[node name="LabelNumberName" type="Label" parent="MainLayout/RightStatusPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No.001 フレイムドラコ"
+
+[node name="MetaRow" type="HBoxContainer" parent="MainLayout/RightStatusPanel/VBox"]
+layout_mode = 2
+
+[node name="LabelElement" type="Label" parent="MainLayout/RightStatusPanel/VBox/MetaRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "属性: 火"
+
+[node name="LabelGrowth" type="Label" parent="MainLayout/RightStatusPanel/VBox/MetaRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "タイプ: 普通"
+
+[node name="HSeparator" type="HSeparator" parent="MainLayout/RightStatusPanel/VBox"]
+layout_mode = 2
+
+[node name="StatsGrid" type="GridContainer" parent="MainLayout/RightStatusPanel/VBox"]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+layout_mode = 2
+text = "HP"
+
+[node name="BarHP" type="ProgressBar" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="LabelHPVal" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+
+[node name="Label2" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+layout_mode = 2
+text = "MP"
+
+[node name="BarMP" type="ProgressBar" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="LabelMPVal" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "50"
+
+[node name="Label3" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+layout_mode = 2
+text = "攻撃"
+
+[node name="BarATK" type="ProgressBar" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="LabelATKVal" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "30"
+
+[node name="Label4" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+layout_mode = 2
+text = "防御"
+
+[node name="BarDEF" type="ProgressBar" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="LabelDEFVal" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "25"
+
+[node name="Label5" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+layout_mode = 2
+text = "魔力"
+
+[node name="BarMAG" type="ProgressBar" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="LabelMAGVal" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "20"
+
+[node name="Label6" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+layout_mode = 2
+text = "素早"
+
+[node name="BarSPD" type="ProgressBar" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="LabelSPDVal" type="Label" parent="MainLayout/RightStatusPanel/VBox/StatsGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "20"
+
+[node name="LabelFood" type="Label" parent="MainLayout/RightStatusPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "好物: おにく"
+
+[node name="LabelEvolution" type="Label" parent="MainLayout/RightStatusPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "進化: No.201"
+
+[node name="LabelDescription" type="RichTextLabel" parent="MainLayout/RightStatusPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "解説文..."

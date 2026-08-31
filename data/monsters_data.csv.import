@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b5qxr4pi7r6sa"
+
+[deps]
+
+files=["res://data/monsters_data.monster.translation", "res://data/monsters_data.description.translation", "res://data/monsters_data.element.translation", "res://data/monsters_data.growth.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.part.translation", "res://data/monsters_data.part.translation", "res://data/monsters_data.part.translation", "res://data/monsters_data.palette.translation", "res://data/monsters_data.scale.translation", "res://data/monsters_data.scale.translation", "res://data/monsters_data.scale.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.hunger.translation", "res://data/monsters_data.energy.translation", "res://data/monsters_data.favorite.translation", "res://data/monsters_data.evolution.translation", "res://data/monsters_data.evolution.translation"]
+
+source_file="res://data/monsters_data.csv"
+dest_files=["res://data/monsters_data.monster.translation", "res://data/monsters_data.description.translation", "res://data/monsters_data.element.translation", "res://data/monsters_data.growth.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.part.translation", "res://data/monsters_data.part.translation", "res://data/monsters_data.part.translation", "res://data/monsters_data.palette.translation", "res://data/monsters_data.scale.translation", "res://data/monsters_data.scale.translation", "res://data/monsters_data.scale.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.base.translation", "res://data/monsters_data.hunger.translation", "res://data/monsters_data.energy.translation", "res://data/monsters_data.favorite.translation", "res://data/monsters_data.evolution.translation", "res://data/monsters_data.evolution.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

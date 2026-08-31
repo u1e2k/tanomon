@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 432
+monster_name = "ノワールナイトロード"
+description = "【第3形態】ノワールナイトロード。古代より伝わるノワールの力を宿すモンスター。"
+element = 8
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 15
+model_scale = Vector3(1.41, 1.41, 1.41)
+base_max_hp = 143
+base_max_mp = 79
+base_attack = 72
+base_defense = 44
+base_magic = 69
+base_speed = 37
+hunger_rate = 1.01
+energy_rate = 0.82
+favorite_food_type = 0
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 142
+monster_name = "ゲイルモコ"
+description = "【第1形態】ゲイルモコ。古代より伝わるゲイルの力を宿すモンスター。"
+element = 6
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 5
+model_scale = Vector3(0.96, 0.96, 0.96)
+base_max_hp = 65
+base_max_mp = 35
+base_attack = 27
+base_defense = 22
+base_magic = 26
+base_speed = 26
+hunger_rate = 0.85
+energy_rate = 1.0
+favorite_food_type = 2
+evolution_ids = Array[int]([342])
+evolution_level_requirement = 15

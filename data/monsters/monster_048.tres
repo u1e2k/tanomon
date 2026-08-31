@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 48
+monster_name = "ノワールナイト"
+description = "【第1形態】ノワールナイト。古代より伝わるノワールの力を宿すモンスター。"
+element = 8
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn"}
+palette_index = 15
+model_scale = Vector3(0.98, 0.98, 0.98)
+base_max_hp = 71
+base_max_mp = 38
+base_attack = 29
+base_defense = 22
+base_magic = 32
+base_speed = 25
+hunger_rate = 1.13
+energy_rate = 0.92
+favorite_food_type = 0
+evolution_ids = Array[int]([248])
+evolution_level_requirement = 15

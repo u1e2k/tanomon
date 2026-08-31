@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 479
+monster_name = "セラフピクシーオメガ"
+description = "【第3形態】セラフピクシーオメガ。古代より伝わるセラフの力を宿すモンスター。"
+element = 7
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn", "back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 6
+model_scale = Vector3(1.39, 1.39, 1.39)
+base_max_hp = 138
+base_max_mp = 81
+base_attack = 54
+base_defense = 51
+base_magic = 71
+base_speed = 43
+hunger_rate = 0.85
+energy_rate = 0.81
+favorite_food_type = 3
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

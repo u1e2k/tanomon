@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 141
+monster_name = "ゴーレムベア"
+description = "【第1形態】ゴーレムベア。古代より伝わるゴーレムの力を宿すモンスター。"
+element = 5
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 12
+model_scale = Vector3(0.99, 0.99, 0.99)
+base_max_hp = 62
+base_max_mp = 36
+base_attack = 30
+base_defense = 28
+base_magic = 22
+base_speed = 20
+hunger_rate = 0.96
+energy_rate = 1.04
+favorite_food_type = 1
+evolution_ids = Array[int]([341])
+evolution_level_requirement = 15

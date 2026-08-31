@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 177
+monster_name = "ヒートフェアリー"
+description = "【第1形態】ヒートフェアリー。古代より伝わるヒートの力を宿すモンスター。"
+element = 1
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 8
+model_scale = Vector3(1.0, 1.0, 1.0)
+base_max_hp = 65
+base_max_mp = 32
+base_attack = 31
+base_defense = 22
+base_magic = 27
+base_speed = 17
+hunger_rate = 1.15
+energy_rate = 0.93
+favorite_food_type = 1
+evolution_ids = Array[int]([377])
+evolution_level_requirement = 15

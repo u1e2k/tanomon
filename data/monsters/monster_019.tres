@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 19
+monster_name = "シルフバット"
+description = "【第1形態】シルフバット。古代より伝わるシルフの力を宿すモンスター。"
+element = 3
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_dragon.tscn"}
+palette_index = 2
+model_scale = Vector3(1.04, 1.04, 1.04)
+base_max_hp = 77
+base_max_mp = 35
+base_attack = 27
+base_defense = 27
+base_magic = 27
+base_speed = 24
+hunger_rate = 1.16
+energy_rate = 0.98
+favorite_food_type = 3
+evolution_ids = Array[int]([219])
+evolution_level_requirement = 15

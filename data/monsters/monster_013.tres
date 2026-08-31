@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 13
+monster_name = "ゴーレムピクシー"
+description = "【第1形態】ゴーレムピクシー。古代より伝わるゴーレムの力を宿すモンスター。"
+element = 5
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 4
+model_scale = Vector3(1.01, 1.01, 1.01)
+base_max_hp = 68
+base_max_mp = 40
+base_attack = 27
+base_defense = 24
+base_magic = 23
+base_speed = 25
+hunger_rate = 1.1
+energy_rate = 1.11
+favorite_food_type = 1
+evolution_ids = Array[int]([213])
+evolution_level_requirement = 15

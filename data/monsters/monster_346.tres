@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 346
+monster_name = "リヴァイノッコキング"
+description = "【第2形態】リヴァイノッコキング。古代より伝わるリヴァイの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 1
+model_scale = Vector3(1.19, 1.19, 1.19)
+base_max_hp = 101
+base_max_mp = 65
+base_attack = 40
+base_defense = 34
+base_magic = 46
+base_speed = 34
+hunger_rate = 1.15
+energy_rate = 0.81
+favorite_food_type = 2
+evolution_ids = Array[int]([446])
+evolution_level_requirement = 30

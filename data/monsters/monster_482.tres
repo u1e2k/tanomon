@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 482
+monster_name = "タイダルドラコル"
+description = "【第3形態】タイダルドラコル。古代より伝わるタイダルの力を宿すモンスター。"
+element = 2
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 1
+model_scale = Vector3(1.36, 1.36, 1.36)
+base_max_hp = 143
+base_max_mp = 93
+base_attack = 59
+base_defense = 47
+base_magic = 59
+base_speed = 45
+hunger_rate = 0.97
+energy_rate = 1.18
+favorite_food_type = 2
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

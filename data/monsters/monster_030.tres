@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 30
+monster_name = "ストームファング"
+description = "【第1形態】ストームファング。古代より伝わるストームの力を宿すモンスター。"
+element = 6
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 13
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 70
+base_max_mp = 35
+base_attack = 25
+base_defense = 19
+base_magic = 28
+base_speed = 29
+hunger_rate = 0.93
+energy_rate = 0.9
+favorite_food_type = 2
+evolution_ids = Array[int]([230])
+evolution_level_requirement = 15

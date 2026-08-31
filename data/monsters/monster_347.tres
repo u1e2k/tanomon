@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 347
+monster_name = "ウッドフェアリーエンペラー"
+description = "【第2形態】ウッドフェアリーエンペラー。古代より伝わるウッドの力を宿すモンスター。"
+element = 3
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 2
+model_scale = Vector3(1.21, 1.21, 1.21)
+base_max_hp = 115
+base_max_mp = 56
+base_attack = 45
+base_defense = 42
+base_magic = 43
+base_speed = 27
+hunger_rate = 0.84
+energy_rate = 0.95
+favorite_food_type = 3
+evolution_ids = Array[int]([447])
+evolution_level_requirement = 30

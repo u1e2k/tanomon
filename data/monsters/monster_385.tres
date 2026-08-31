@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 385
+monster_name = "フレイムペガサスドン"
+description = "【第2形態】フレイムペガサスドン。古代より伝わるフレイムの力を宿すモンスター。"
+element = 1
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn", "back": "res://assets/models/parts/wings_angel.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 0
+model_scale = Vector3(1.2, 1.2, 1.2)
+base_max_hp = 101
+base_max_mp = 55
+base_attack = 52
+base_defense = 35
+base_magic = 43
+base_speed = 35
+hunger_rate = 0.96
+energy_rate = 1.17
+favorite_food_type = 1
+evolution_ids = Array[int]([485])
+evolution_level_requirement = 30

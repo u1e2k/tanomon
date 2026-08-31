@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 119
+monster_name = "セレスモグ"
+description = "【第1形態】セレスモグ。古代より伝わるセレスの力を宿すモンスター。"
+element = 7
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 6
+model_scale = Vector3(1.0, 1.0, 1.0)
+base_max_hp = 71
+base_max_mp = 40
+base_attack = 29
+base_defense = 22
+base_magic = 33
+base_speed = 18
+hunger_rate = 1.13
+energy_rate = 1.05
+favorite_food_type = 3
+evolution_ids = Array[int]([319])
+evolution_level_requirement = 15

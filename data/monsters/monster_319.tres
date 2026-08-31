@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 319
+monster_name = "ソレイユリッチドン"
+description = "【第2形態】ソレイユリッチドン。古代より伝わるソレイユの力を宿すモンスター。"
+element = 7
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/crown.tscn"}
+palette_index = 6
+model_scale = Vector3(1.22, 1.22, 1.22)
+base_max_hp = 108
+base_max_mp = 53
+base_attack = 38
+base_defense = 35
+base_magic = 46
+base_speed = 31
+hunger_rate = 0.89
+energy_rate = 1.17
+favorite_food_type = 3
+evolution_ids = Array[int]([419])
+evolution_level_requirement = 30

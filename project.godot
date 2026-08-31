@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; but it is present for convenience and default configuration.
+
+config_version=5
+
+[application]
+
+config/name="Tanomon"
+config/description="Retro Low-Poly 3D Monster Raising & Dispatch RPG"
+config/version="0.1.0"
+run/main_scene="res://scenes/title/TitleScene.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/autoload/GameManager.gd"
+MonsterDatabase="*res://scripts/autoload/MonsterDatabase.gd"
+RetroSoundPlayer="*res://scripts/audio/RetroSoundPlayer.gd"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=360
+window/size/window_width_override=2400
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="fractional"
+window/handheld/orientation=0
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/default_filters/use_nearest_mipmap_filter=true
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_3d=0
+anti_aliasing/quality/screen_space_aa=0

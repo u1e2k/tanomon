@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 417
+monster_name = "クリムゾンポロンドン"
+description = "【第3形態】クリムゾンポロンドン。古代より伝わるクリムゾンの力を宿すモンスター。"
+element = 1
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn"}
+palette_index = 8
+model_scale = Vector3(1.36, 1.36, 1.36)
+base_max_hp = 133
+base_max_mp = 74
+base_attack = 73
+base_defense = 47
+base_magic = 57
+base_speed = 41
+hunger_rate = 1.15
+energy_rate = 0.84
+favorite_food_type = 1
+evolution_ids = Array[int]([])
+evolution_level_requirement = 0

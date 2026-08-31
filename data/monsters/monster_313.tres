@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 313
+monster_name = "イグニスホーンキング"
+description = "【第2形態】イグニスホーンキング。古代より伝わるイグニスの力を宿すモンスター。"
+element = 1
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn"}
+palette_index = 0
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 101
+base_max_mp = 56
+base_attack = 50
+base_defense = 36
+base_magic = 38
+base_speed = 29
+hunger_rate = 0.83
+energy_rate = 1.03
+favorite_food_type = 1
+evolution_ids = Array[int]([413])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 84
+monster_name = "ライトニタイガー"
+description = "【第1形態】ライトニタイガー。古代より伝わるライトニの力を宿すモンスター。"
+element = 4
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 11
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 62
+base_max_mp = 34
+base_attack = 23
+base_defense = 24
+base_magic = 29
+base_speed = 30
+hunger_rate = 0.92
+energy_rate = 0.89
+favorite_food_type = 0
+evolution_ids = Array[int]([284])
+evolution_level_requirement = 15

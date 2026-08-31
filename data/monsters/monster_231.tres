@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 231
+monster_name = "オーラゴブドン"
+description = "【第2形態】オーラゴブドン。古代より伝わるオーラの力を宿すモンスター。"
+element = 7
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn"}
+palette_index = 14
+model_scale = Vector3(1.23, 1.23, 1.23)
+base_max_hp = 104
+base_max_mp = 55
+base_attack = 40
+base_defense = 36
+base_magic = 51
+base_speed = 35
+hunger_rate = 0.98
+energy_rate = 1.07
+favorite_food_type = 3
+evolution_ids = Array[int]([331])
+evolution_level_requirement = 30

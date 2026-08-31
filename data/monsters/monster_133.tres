@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 133
+monster_name = "ガイアワイバーン"
+description = "【第1形態】ガイアワイバーン。古代より伝わるガイアの力を宿すモンスター。"
+element = 5
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 4
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 61
+base_max_mp = 41
+base_attack = 28
+base_defense = 25
+base_magic = 28
+base_speed = 22
+hunger_rate = 1.15
+energy_rate = 1.18
+favorite_food_type = 1
+evolution_ids = Array[int]([333])
+evolution_level_requirement = 15

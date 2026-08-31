@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 327
+monster_name = "ホーリーノッコプライム"
+description = "【第2形態】ホーリーノッコプライム。古代より伝わるホーリーの力を宿すモンスター。"
+element = 7
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 14
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 108
+base_max_mp = 53
+base_attack = 39
+base_defense = 37
+base_magic = 46
+base_speed = 27
+hunger_rate = 1.14
+energy_rate = 0.8
+favorite_food_type = 3
+evolution_ids = Array[int]([427])
+evolution_level_requirement = 30

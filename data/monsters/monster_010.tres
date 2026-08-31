@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 10
+monster_name = "マリンドラコ"
+description = "【第1形態】マリンドラコ。古代より伝わるマリンの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 1
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 70
+base_max_mp = 42
+base_attack = 26
+base_defense = 25
+base_magic = 31
+base_speed = 24
+hunger_rate = 0.86
+energy_rate = 0.86
+favorite_food_type = 2
+evolution_ids = Array[int]([210])
+evolution_level_requirement = 15

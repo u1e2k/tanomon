@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 57
+monster_name = "イグニスバード"
+description = "【第1形態】イグニスバード。古代より伝わるイグニスの力を宿すモンスター。"
+element = 1
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_angel.tscn"}
+palette_index = 8
+model_scale = Vector3(0.98, 0.98, 0.98)
+base_max_hp = 66
+base_max_mp = 40
+base_attack = 29
+base_defense = 20
+base_magic = 24
+base_speed = 20
+hunger_rate = 0.95
+energy_rate = 0.86
+favorite_food_type = 1
+evolution_ids = Array[int]([257])
+evolution_level_requirement = 15

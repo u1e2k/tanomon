@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 257
+monster_name = "フレイムコブラロード"
+description = "【第2形態】フレイムコブラロード。古代より伝わるフレイムの力を宿すモンスター。"
+element = 1
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 0
+model_scale = Vector3(1.2, 1.2, 1.2)
+base_max_hp = 100
+base_max_mp = 52
+base_attack = 54
+base_defense = 32
+base_magic = 37
+base_speed = 28
+hunger_rate = 1.01
+energy_rate = 0.9
+favorite_food_type = 1
+evolution_ids = Array[int]([357])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 314
+monster_name = "シレーヌモグエンペラー"
+description = "【第2形態】シレーヌモグエンペラー。古代より伝わるシレーヌの力を宿すモンスター。"
+element = 2
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 1
+model_scale = Vector3(1.21, 1.21, 1.21)
+base_max_hp = 98
+base_max_mp = 69
+base_attack = 43
+base_defense = 33
+base_magic = 44
+base_speed = 33
+hunger_rate = 1.05
+energy_rate = 0.98
+favorite_food_type = 2
+evolution_ids = Array[int]([414])
+evolution_level_requirement = 30

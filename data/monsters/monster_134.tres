@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 134
+monster_name = "ウインドフォックス"
+description = "【第1形態】ウインドフォックス。古代より伝わるウインドの力を宿すモンスター。"
+element = 6
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 5
+model_scale = Vector3(0.99, 0.99, 0.99)
+base_max_hp = 72
+base_max_mp = 32
+base_attack = 29
+base_defense = 22
+base_magic = 27
+base_speed = 22
+hunger_rate = 1.03
+energy_rate = 0.89
+favorite_food_type = 2
+evolution_ids = Array[int]([334])
+evolution_level_requirement = 15

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 318
+monster_name = "スカイガルル"
+description = "【第2形態】スカイガルル。古代より伝わるスカイの力を宿すモンスター。"
+element = 6
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horn_single.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 13
+model_scale = Vector3(1.17, 1.17, 1.17)
+base_max_hp = 96
+base_max_mp = 57
+base_attack = 47
+base_defense = 32
+base_magic = 42
+base_speed = 41
+hunger_rate = 0.95
+energy_rate = 1.07
+favorite_food_type = 2
+evolution_ids = Array[int]([418])
+evolution_level_requirement = 30

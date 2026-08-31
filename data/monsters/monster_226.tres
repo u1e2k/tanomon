@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 226
+monster_name = "タイダルモグエンペラー"
+description = "【第2形態】タイダルモグエンペラー。古代より伝わるタイダルの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {}
+palette_index = 1
+model_scale = Vector3(1.24, 1.24, 1.24)
+base_max_hp = 103
+base_max_mp = 67
+base_attack = 41
+base_defense = 30
+base_magic = 46
+base_speed = 33
+hunger_rate = 0.89
+energy_rate = 1.1
+favorite_food_type = 2
+evolution_ids = Array[int]([326])
+evolution_level_requirement = 30

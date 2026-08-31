@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 45
+monster_name = "ストーンワイバーン"
+description = "【第1形態】ストーンワイバーン。古代より伝わるストーンの力を宿すモンスター。"
+element = 5
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_floating.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 12
+model_scale = Vector3(0.97, 0.97, 0.97)
+base_max_hp = 70
+base_max_mp = 35
+base_attack = 27
+base_defense = 24
+base_magic = 28
+base_speed = 17
+hunger_rate = 1.01
+energy_rate = 1.12
+favorite_food_type = 1
+evolution_ids = Array[int]([245])
+evolution_level_requirement = 15

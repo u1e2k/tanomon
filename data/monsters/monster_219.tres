@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 219
+monster_name = "ウッドクロウル"
+description = "【第2形態】ウッドクロウル。古代より伝わるウッドの力を宿すモンスター。"
+element = 3
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 10
+model_scale = Vector3(1.18, 1.18, 1.18)
+base_max_hp = 115
+base_max_mp = 52
+base_attack = 39
+base_defense = 42
+base_magic = 41
+base_speed = 34
+hunger_rate = 0.84
+energy_rate = 1.11
+favorite_food_type = 3
+evolution_ids = Array[int]([319])
+evolution_level_requirement = 30

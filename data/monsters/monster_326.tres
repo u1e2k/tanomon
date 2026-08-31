@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 326
+monster_name = "ウインドクロウオメガ"
+description = "【第2形態】ウインドクロウオメガ。古代より伝わるウインドの力を宿すモンスター。"
+element = 6
+growth_type = 2
+base_model_path = "res://assets/models/bases/base_biped.tscn"
+parts_paths = {"back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 5
+model_scale = Vector3(1.21, 1.21, 1.21)
+base_max_hp = 97
+base_max_mp = 59
+base_attack = 49
+base_defense = 35
+base_magic = 36
+base_speed = 42
+hunger_rate = 1.14
+energy_rate = 0.87
+favorite_food_type = 2
+evolution_ids = Array[int]([426])
+evolution_level_requirement = 30

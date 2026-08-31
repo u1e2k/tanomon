@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 324
+monster_name = "サンダータートルキング"
+description = "【第2形態】サンダータートルキング。古代より伝わるサンダーの力を宿すモンスター。"
+element = 4
+growth_type = 0
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {}
+palette_index = 11
+model_scale = Vector3(1.16, 1.16, 1.16)
+base_max_hp = 103
+base_max_mp = 57
+base_attack = 42
+base_defense = 32
+base_magic = 41
+base_speed = 41
+hunger_rate = 1.1
+energy_rate = 1.15
+favorite_food_type = 0
+evolution_ids = Array[int]([424])
+evolution_level_requirement = 30

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/MonsterData.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = 154
+monster_name = "リヴァイキマイラ"
+description = "【第1形態】リヴァイキマイラ。古代より伝わるリヴァイの力を宿すモンスター。"
+element = 2
+growth_type = 1
+base_model_path = "res://assets/models/bases/base_quadruped.tscn"
+parts_paths = {"head": "res://assets/models/parts/horns_dual.tscn", "back": "res://assets/models/parts/wings_dragon.tscn", "tail": "res://assets/models/parts/tail_spike.tscn"}
+palette_index = 1
+model_scale = Vector3(1.01, 1.01, 1.01)
+base_max_hp = 66
+base_max_mp = 42
+base_attack = 27
+base_defense = 24
+base_magic = 31
+base_speed = 22
+hunger_rate = 1.07
+energy_rate = 0.82
+favorite_food_type = 2
+evolution_ids = Array[int]([354])
+evolution_level_requirement = 15
