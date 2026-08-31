@@ -1,25 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://title_scene_01"]
+[gd_scene load_steps=5 format=3 uid="uid://title_scene_01"]
 
 [ext_resource type="Script" path="res://scripts/title/TitleScene.gd" id="1_title"]
-[ext_resource type="PackedScene" uid="uid://live_ranch_bg_01" path="res://scenes/title/LiveRanchBackground.tscn" id="2_ranch"]
+[ext_resource type="PackedScene" uid="uid://live_ranch_background" path="res://scenes/title/LiveRanchBackground.tscn" id="2_ranch_bg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title_box"]
-bg_color = Color(0.08, 0.1, 0.16, 0.85)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_logo"]
+bg_color = Color(0.1, 0.12, 0.18, 0.9)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_logo"]
-font_size = 32
-font_color = Color(1, 0.85, 0.2, 1)
-outline_size = 6
-outline_color = Color(0.15, 0.1, 0.05, 1)
 shadow_size = 4
-shadow_color = Color(0, 0, 0, 0.6)
-shadow_offset = Vector2(2, 2)
+shadow_color = Color(0, 0, 0, 0.4)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_invisible"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tap"]
 
 [node name="TitleScene" type="Control"]
 layout_mode = 3
@@ -30,7 +23,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_title")
 
-[node name="3DBackgroundContainer" type="SubViewportContainer" parent="."]
+[node name="LiveRanchBackground" parent="." instance=ExtResource("2_ranch_bg")]
+
+[node name="SafeMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,14 +34,106 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-stretch = true
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 10
 
-[node name="SubViewport" type="SubViewport" parent="3DBackgroundContainer"]
-handle_input_locally = false
-size = Vector2i(800, 360)
-render_target_update_mode = 4
+[node name="VBox" type="VBoxContainer" parent="SafeMarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
 
-[node name="LiveRanchBackground" parent="3DBackgroundContainer/SubViewport" instance=ExtResource("2_ranch")]
+[node name="LogoPanel" type="PanelContainer" parent="SafeMarginContainer/VBox"]
+custom_minimum_size = Vector2(380, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_logo")
+
+[node name="VBox" type="VBoxContainer" parent="SafeMarginContainer/VBox/LogoPanel"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="SafeMarginContainer/VBox/LogoPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 20
+text = "TANOMON 3D"
+horizontal_alignment = 1
+
+[node name="SubTitleLabel" type="Label" parent="SafeMarginContainer/VBox/LogoPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 11
+text = "～ レトロモンスター育成＆派遣RPG ～"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="SafeMarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MenuContainer" type="VBoxContainer" parent="SafeMarginContainer/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="StartButton" type="Button" parent="SafeMarginContainer/VBox/MenuContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 0
+theme_override_font_sizes/font_size = 13
+text = "はじめる (New Game)"
+
+[node name="ContinueButton" type="Button" parent="SafeMarginContainer/VBox/MenuContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 0
+theme_override_font_sizes/font_size = 13
+text = "つづきから (Continue)"
+
+[node name="DexButton" type="Button" parent="SafeMarginContainer/VBox/MenuContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 0
+theme_override_font_sizes/font_size = 13
+text = "モンスター図鑑 (3D Viewer)"
+
+[node name="SettingsButton" type="Button" parent="SafeMarginContainer/VBox/MenuContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 0
+theme_override_font_sizes/font_size = 13
+text = "せってい (Settings)"
+
+[node name="PromptLabel" type="Label" parent="SafeMarginContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 0.9)
+theme_override_font_sizes/font_size = 12
+text = "PRESS ANY BUTTON OR TAP TO START"
+horizontal_alignment = 1
+
+[node name="VersionLabel" type="Label" parent="SafeMarginContainer/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 0.9)
+theme_override_font_sizes/font_size = 11
+text = "v0.1.0 | Pixel 9a Edition (808x360 3.0x)"
+horizontal_alignment = 2
 
 [node name="TapToStartButton" type="Button" parent="."]
 unique_name_in_owner = true
@@ -55,129 +143,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_invisible")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_invisible")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_invisible")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_invisible")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_invisible")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tap")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tap")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tap")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tap")
 flat = true
-
-[node name="SafeMargin" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 18
-theme_override_constants/margin_right = 48
-theme_override_constants/margin_bottom = 18
-
-[node name="UIOverlay" type="Control" parent="SafeMargin"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="HeaderPanel" type="PanelContainer" parent="SafeMargin/UIOverlay"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -220.0
-offset_right = 220.0
-offset_bottom = 76.0
-grow_horizontal = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_title_box")
-
-[node name="VBox" type="VBoxContainer" parent="SafeMargin/UIOverlay/HeaderPanel"]
-layout_mode = 2
-offset_left = 20.0
-offset_top = 8.0
-offset_right = 420.0
-offset_bottom = 68.0
-alignment = 1
-
-[node name="TitleLabel" type="Label" parent="SafeMargin/UIOverlay/HeaderPanel/VBox"]
-layout_mode = 2
-text = "TANOMON 3D"
-label_settings = SubResource("LabelSettings_logo")
-horizontal_alignment = 1
-
-[node name="SubTitleLabel" type="Label" parent="SafeMargin/UIOverlay/HeaderPanel/VBox"]
-layout_mode = 2
-text = "~ レトロモンスター育成＆派遣RPG ~"
-horizontal_alignment = 1
-
-[node name="PressStartLabel" type="Label" parent="SafeMargin/UIOverlay"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -180.0
-offset_top = -60.0
-offset_right = 180.0
-offset_bottom = -30.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "PRESS ANY BUTTON OR TAP TO START"
-horizontal_alignment = 1
-
-[node name="MenuContainer" type="VBoxContainer" parent="SafeMargin/UIOverlay"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -140.0
-offset_top = -180.0
-offset_right = 140.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 8
-
-[node name="BtnNewGame" type="Button" parent="SafeMargin/UIOverlay/MenuContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 36)
-layout_mode = 2
-text = "はじめる (New Game)"
-
-[node name="BtnContinue" type="Button" parent="SafeMargin/UIOverlay/MenuContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 36)
-layout_mode = 2
-text = "つづきから (Continue)"
-
-[node name="BtnDex" type="Button" parent="SafeMargin/UIOverlay/MenuContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 36)
-layout_mode = 2
-text = "モンスター図鑑 (3D Viewer)"
-
-[node name="BtnSettings" type="Button" parent="SafeMargin/UIOverlay/MenuContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 36)
-layout_mode = 2
-text = "せってい (Settings)"
-
-[node name="FooterLabel" type="Label" parent="SafeMargin/UIOverlay"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -20.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "v0.1.0 | Pixel 9a Edition"
-horizontal_alignment = 2

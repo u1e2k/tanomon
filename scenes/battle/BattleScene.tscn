@@ -88,7 +88,8 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 1.8, 0, 
 [node name="EnemyMonster3D" parent="3DViewportContainer/SubViewport/EnemyPivot" instance=ExtResource("2_modular")]
 unique_name_in_owner = true
 
-[node name="UIOverlay" type="Control" parent="."]
+[node name="SafeMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,212 +97,142 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 8
 
-[node name="TopStatusRow" type="HBoxContainer" parent="UIOverlay"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 48.0
-offset_top = 10.0
-offset_right = -48.0
-offset_bottom = 70.0
-grow_horizontal = 2
-theme_override_constants/separation = 20
+[node name="VBox" type="VBoxContainer" parent="SafeMarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
 
-[node name="PlayerStatusPanel" type="PanelContainer" parent="UIOverlay/TopStatusRow"]
+[node name="TopStatusRow" type="HBoxContainer" parent="SafeMarginContainer/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="PlayerCard" type="PanelContainer" parent="SafeMarginContainer/VBox/TopStatusRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="SafeMarginContainer/VBox/TopStatusRow/PlayerCard"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="PlayerNameLabel" type="Label" parent="SafeMarginContainer/VBox/TopStatusRow/PlayerCard/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "味方: フレイムバット Lv.1"
+
+[node name="HPBar" type="ProgressBar" parent="SafeMarginContainer/VBox/TopStatusRow/PlayerCard/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
+[node name="HPVal" type="Label" parent="SafeMarginContainer/VBox/TopStatusRow/PlayerCard/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "HP: 60/60"
+
+[node name="Spacer" type="Control" parent="SafeMarginContainer/VBox/TopStatusRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="EnemyCard" type="PanelContainer" parent="SafeMarginContainer/VBox/TopStatusRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="SafeMarginContainer/VBox/TopStatusRow/EnemyCard"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="EnemyNameLabel" type="Label" parent="SafeMarginContainer/VBox/TopStatusRow/EnemyCard/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "敵: アクアビースト Lv.1"
+horizontal_alignment = 2
+
+[node name="HPBar" type="ProgressBar" parent="SafeMarginContainer/VBox/TopStatusRow/EnemyCard/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
+[node name="HPVal" type="Label" parent="SafeMarginContainer/VBox/TopStatusRow/EnemyCard/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "HP: 60/60"
+horizontal_alignment = 2
+
+[node name="MiddleSpacer" type="Control" parent="SafeMarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomRow" type="HBoxContainer" parent="SafeMarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BattleLogPanel" type="PanelContainer" parent="SafeMarginContainer/VBox/BottomRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/TopStatusRow/PlayerStatusPanel"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 376.0
-offset_bottom = 54.0
-
-[node name="PlayerNameLabel" type="Label" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox"]
+[node name="LogLabel" type="Label" parent="SafeMarginContainer/VBox/BottomRow/BattleLogPanel"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "ドラコ Lv.1"
-
-[node name="HBoxHP" type="HBoxContainer" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox/HBoxHP"]
-custom_minimum_size = Vector2(25, 0)
-layout_mode = 2
-text = "HP"
-
-[node name="PlayerHPBar" type="ProgressBar" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox/HBoxHP"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-value = 100.0
-show_percentage = false
-
-[node name="PlayerHPLabel" type="Label" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox/HBoxHP"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "60 / 60"
-
-[node name="HBoxMP" type="HBoxContainer" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox/HBoxMP"]
-custom_minimum_size = Vector2(25, 0)
-layout_mode = 2
-text = "MP"
-
-[node name="PlayerMPBar" type="ProgressBar" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox/HBoxMP"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-value = 100.0
-show_percentage = false
-
-[node name="PlayerMPLabel" type="Label" parent="UIOverlay/TopStatusRow/PlayerStatusPanel/VBox/HBoxMP"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "25 / 25"
-
-[node name="EnemyStatusPanel" type="PanelContainer" parent="UIOverlay/TopStatusRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
-
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/TopStatusRow/EnemyStatusPanel"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 376.0
-offset_bottom = 54.0
-
-[node name="EnemyNameLabel" type="Label" parent="UIOverlay/TopStatusRow/EnemyStatusPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "野生のモンスター Lv.1"
-
-[node name="HBoxHP" type="HBoxContainer" parent="UIOverlay/TopStatusRow/EnemyStatusPanel/VBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UIOverlay/TopStatusRow/EnemyStatusPanel/VBox/HBoxHP"]
-custom_minimum_size = Vector2(25, 0)
-layout_mode = 2
-text = "HP"
-
-[node name="EnemyHPBar" type="ProgressBar" parent="UIOverlay/TopStatusRow/EnemyStatusPanel/VBox/HBoxHP"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-value = 100.0
-show_percentage = false
-
-[node name="EnemyHPLabel" type="Label" parent="UIOverlay/TopStatusRow/EnemyStatusPanel/VBox/HBoxHP"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "50 / 50"
-
-[node name="BottomPanel" type="PanelContainer" parent="UIOverlay"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = -68.0
-offset_right = -48.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
-
-[node name="HBox" type="HBoxContainer" parent="UIOverlay/BottomPanel"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 776.0
-offset_bottom = 49.0
-theme_override_constants/separation = 15
-
-[node name="LogLabel" type="Label" parent="UIOverlay/BottomPanel/HBox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
 text = "野生のモンスターがあらわれた！"
-vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="CommandsContainer" type="HBoxContainer" parent="UIOverlay/BottomPanel/HBox"]
-unique_name_in_owner = true
+[node name="CommandPanel" type="PanelContainer" parent="SafeMarginContainer/VBox/BottomRow"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="BtnAttack" type="Button" parent="UIOverlay/BottomPanel/HBox/CommandsContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "こうげき"
-
-[node name="BtnSkill" type="Button" parent="UIOverlay/BottomPanel/HBox/CommandsContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "とくぎ (8MP)"
-
-[node name="BtnDefend" type="Button" parent="UIOverlay/BottomPanel/HBox/CommandsContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "ぼうぎょ"
-
-[node name="BtnRun" type="Button" parent="UIOverlay/BottomPanel/HBox/CommandsContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "にげる"
-
-[node name="ResultPanel" type="PanelContainer" parent="UIOverlay"]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -70.0
-offset_right = 150.0
-offset_bottom = 70.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/ResultPanel"]
+[node name="Grid" type="GridContainer" parent="SafeMarginContainer/VBox/BottomRow/CommandPanel"]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 292.0
-offset_bottom = 132.0
-theme_override_constants/separation = 8
+columns = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 4
 
-[node name="ResultTitleLabel" type="Label" parent="UIOverlay/ResultPanel/VBox"]
+[node name="AttackButton" type="Button" parent="SafeMarginContainer/VBox/BottomRow/CommandPanel/Grid"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 26)
 layout_mode = 2
-text = "★ バトル勝利！ ★"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+text = "⚔️ こうげき"
 
-[node name="ResultDescLabel" type="Label" parent="UIOverlay/ResultPanel/VBox"]
+[node name="SkillButton" type="Button" parent="SafeMarginContainer/VBox/BottomRow/CommandPanel/Grid"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 26)
 layout_mode = 2
-text = "EXP +50, 60G 獲得！"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+text = "🔥 とくぎ"
 
-[node name="BtnReturnRanch" type="Button" parent="UIOverlay/ResultPanel/VBox"]
+[node name="DefendButton" type="Button" parent="SafeMarginContainer/VBox/BottomRow/CommandPanel/Grid"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 26)
 layout_mode = 2
-text = "牧場へもどる"
+theme_override_font_sizes/font_size = 12
+text = "🛡️ ぼうぎょ"
+
+[node name="RunButton" type="Button" parent="SafeMarginContainer/VBox/BottomRow/CommandPanel/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "💨 にげる"

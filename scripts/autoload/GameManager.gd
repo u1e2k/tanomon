@@ -262,3 +262,18 @@ func load_game() -> void:
 		time_index = data.get("time_index", time_index)
 		inventory = data.get("inventory", inventory)
 		active_monster = data.get("active_monster", active_monster)
+		stats_updated.emit()
+
+func reset_game_state() -> void:
+	gold = 500
+	current_day = 1
+	time_index = 0
+	inventory = {
+		"おにく": 5,
+		"さかな": 3,
+		"きのみ": 8,
+		"まほう草": 2,
+		"進化のオーブ": 1
+	}
+	_init_default_monster(1)
+	stats_updated.emit()

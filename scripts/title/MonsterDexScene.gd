@@ -61,6 +61,9 @@ const ELEMENT_COLORS: Array[Color] = [
 const FOOD_NAMES: Array[String] = ["おにく", "さかな", "きのみ", "まほう草"]
 
 func _ready() -> void:
+	if has_node("%SafeMarginContainer"):
+		SafeAreaHelper.apply_safe_area(%SafeMarginContainer, 52, 8)
+		
 	_total_count = MonsterDatabase.get_total_count()
 	if _total_count == 0:
 		_total_count = 500

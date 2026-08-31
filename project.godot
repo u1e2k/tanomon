@@ -18,13 +18,12 @@ config/icon="res://icon.svg"
 GameManager="*res://scripts/autoload/GameManager.gd"
 MonsterDatabase="*res://scripts/autoload/MonsterDatabase.gd"
 RetroSoundPlayer="*res://scripts/audio/RetroSoundPlayer.gd"
+SafeAreaHelper="*res://scripts/autoload/SafeAreaHelper.gd"
 
 [display]
 
-window/size/viewport_width=800
+window/size/viewport_width=808
 window/size/viewport_height=360
-window/size/window_width_override=2400
-window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="fractional"

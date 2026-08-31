@@ -1,510 +1,462 @@
-[gd_scene load_steps=9 format=3 uid="uid://ranch_scene_01"]
+[gd_scene load_steps=7 format=3 uid="uid://ranch_scene_01"]
 
 [ext_resource type="Script" path="res://scripts/ranch/RanchScene.gd" id="1_ranch"]
 [ext_resource type="PackedScene" uid="uid://modular_monster_scene" path="res://scenes/monster/ModularMonster.tscn" id="2_modular"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
-bg_color = Color(0.1, 0.12, 0.18, 0.85)
+[sub_resource type="Environment" id="Environment_ranch"]
+background_mode = 1
+background_color = Color(0.55, 0.75, 0.9, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.7, 0.75, 0.8, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(25, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ground"]
+albedo_color = Color(0.35, 0.65, 0.3, 1)
+roughness = 0.9
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.12, 0.14, 0.22, 0.9)
+bg_color = Color(0.12, 0.14, 0.2, 0.9)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ranch"]
-sky_top_color = Color(0.4, 0.68, 0.95, 1)
-sky_horizon_color = Color(0.75, 0.85, 0.95, 1)
-ground_bottom_color = Color(0.25, 0.4, 0.18, 1)
-ground_horizon_color = Color(0.5, 0.7, 0.4, 1)
-
-[sub_resource type="Sky" id="Sky_ranch"]
-sky_material = SubResource("ProceduralSkyMaterial_ranch")
-
-[sub_resource type="Environment" id="Environment_ranch"]
-background_mode = 2
-sky = SubResource("Sky_ranch")
-ambient_light_source = 3
-ambient_light_color = Color(0.65, 0.65, 0.7, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_grass"]
-size = Vector2(30, 30)
-
-[node name="RanchScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="RanchScene" type="Node3D"]
 script = ExtResource("1_ranch")
 
-[node name="3DViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="3DViewportContainer"]
-unique_name_in_owner = true
-handle_input_locally = false
-size = Vector2i(808, 360)
-render_target_update_mode = 4
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="3DViewportContainer/SubViewport"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 unique_name_in_owner = true
 environment = SubResource("Environment_ranch")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DViewportContainer/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 8, 0)
-light_color = Color(1, 0.96, 0.9, 1)
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 5, 8, 5)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="3DViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.8, 3.8)
-fov = 42.0
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_ground")
 
-[node name="Ground" type="MeshInstance3D" parent="3DViewportContainer/SubViewport"]
-mesh = SubResource("PlaneMesh_grass")
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
-[node name="ModularMonster" parent="3DViewportContainer/SubViewport" instance=ExtResource("2_modular")]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.8, 4.2)
+fov = 48.0
+
+[node name="PartnerMonster" parent="." instance=ExtResource("2_modular")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="UIOverlay" type="Control" parent="."]
-layout_mode = 1
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SafeMarginContainer" type="MarginContainer" parent="UI"]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 8
 
-[node name="HeaderPanel" type="PanelContainer" parent="UIOverlay"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 48.0
-offset_top = 8.0
-offset_right = -48.0
-offset_bottom = 40.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_header")
-
-[node name="HBox" type="HBoxContainer" parent="UIOverlay/HeaderPanel"]
+[node name="MainVBox" type="VBoxContainer" parent="UI/SafeMarginContainer"]
 layout_mode = 2
-offset_left = 12.0
-offset_top = 4.0
-offset_right = 692.0
-offset_bottom = 28.0
+mouse_filter = 2
+theme_override_constants/separation = 6
 
-[node name="LabelDateTime" type="Label" parent="UIOverlay/HeaderPanel/HBox"]
+[node name="HeaderPanel" type="PanelContainer" parent="UI/SafeMarginContainer/MainVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="HBox" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox/HeaderPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="DateLabel" type="Label" parent="UI/SafeMarginContainer/MainVBox/HeaderPanel/HBox"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "1日目 (あさ)"
 
-[node name="VSeparator" type="VSeparator" parent="UIOverlay/HeaderPanel/HBox"]
+[node name="VSeparator" type="VSeparator" parent="UI/SafeMarginContainer/MainVBox/HeaderPanel/HBox"]
 layout_mode = 2
 
-[node name="LabelMonsterHeader" type="Label" parent="UIOverlay/HeaderPanel/HBox"]
+[node name="MonsterNameHeader" type="Label" parent="UI/SafeMarginContainer/MainVBox/HeaderPanel/HBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "ドラコ Lv.1"
+theme_override_font_sizes/font_size = 13
+text = "フレイムバット Lv.1 (EXP: 0/25)"
 
-[node name="LabelGold" type="Label" parent="UIOverlay/HeaderPanel/HBox"]
+[node name="GoldLabel" type="Label" parent="UI/SafeMarginContainer/MainVBox/HeaderPanel/HBox"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "500 G"
 
-[node name="LeftBiorhythmPanel" type="PanelContainer" parent="UIOverlay"]
+[node name="MiddleArea" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="LeftStatusPanel" type="PanelContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea"]
 custom_minimum_size = Vector2(210, 0)
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 258.0
-offset_bottom = -54.0
-grow_vertical = 2
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/LeftBiorhythmPanel"]
+[node name="VBox" type="VBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel"]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 202.0
-offset_bottom = 262.0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 4
 
-[node name="Title" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="StatusHeader" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "■ モンスターの状態"
 
-[node name="RowHP" type="HBoxContainer" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="HPContainer" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowHP"]
-custom_minimum_size = Vector2(40, 0)
+[node name="Label" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/HPContainer"]
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "HP"
 
-[node name="BarHP" type="ProgressBar" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowHP"]
+[node name="HPBar" type="ProgressBar" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/HPContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-value = 100.0
 show_percentage = false
 
-[node name="LabelHP" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowHP"]
+[node name="HPVal" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/HPContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "60/60"
+theme_override_font_sizes/font_size = 11
+text = "60 / 60"
 
-[node name="RowMP" type="HBoxContainer" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="MPContainer" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowMP"]
-custom_minimum_size = Vector2(40, 0)
+[node name="Label" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/MPContainer"]
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "MP"
 
-[node name="BarMP" type="ProgressBar" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowMP"]
+[node name="MPBar" type="ProgressBar" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/MPContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-value = 100.0
 show_percentage = false
 
-[node name="LabelMP" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowMP"]
+[node name="MPVal" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/MPContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "25/25"
+theme_override_font_sizes/font_size = 11
+text = "40 / 40"
 
-[node name="HSeparator" type="HSeparator" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="HSeparator" type="HSeparator" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
 
-[node name="RowHunger" type="HBoxContainer" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="HungerContainer" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowHunger"]
-custom_minimum_size = Vector2(40, 0)
+[node name="Label" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/HungerContainer"]
+custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "まんぷく"
 
-[node name="BarHunger" type="ProgressBar" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowHunger"]
+[node name="HungerBar" type="ProgressBar" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/HungerContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-value = 80.0
 show_percentage = false
 
-[node name="LabelHunger" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowHunger"]
+[node name="HungerVal" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/HungerContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "80%"
 
-[node name="RowEnergy" type="HBoxContainer" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="EnergyContainer" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowEnergy"]
-custom_minimum_size = Vector2(40, 0)
+[node name="Label" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/EnergyContainer"]
+custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "げんき"
 
-[node name="BarEnergy" type="ProgressBar" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowEnergy"]
+[node name="EnergyBar" type="ProgressBar" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/EnergyContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-value = 90.0
 show_percentage = false
 
-[node name="LabelEnergy" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowEnergy"]
+[node name="EnergyVal" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/EnergyContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "90%"
 
-[node name="RowAffection" type="HBoxContainer" parent="UIOverlay/LeftBiorhythmPanel/VBox"]
+[node name="MoodContainer" type="HBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowAffection"]
-custom_minimum_size = Vector2(40, 0)
+[node name="Label" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/MoodContainer"]
+custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "きげん"
 
-[node name="BarAffection" type="ProgressBar" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowAffection"]
+[node name="MoodBar" type="ProgressBar" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/MoodContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-value = 70.0
 show_percentage = false
 
-[node name="LabelAffection" type="Label" parent="UIOverlay/LeftBiorhythmPanel/VBox/RowAffection"]
+[node name="MoodVal" type="Label" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/LeftStatusPanel/VBox/MoodContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 11
 text = "70%"
 
-[node name="RightActionsPanel" type="PanelContainer" parent="UIOverlay"]
+[node name="Spacer" type="Control" parent="UI/SafeMarginContainer/MainVBox/MiddleArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="RightActionPanel" type="PanelContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea"]
 custom_minimum_size = Vector2(170, 0)
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -218.0
-offset_top = 48.0
-offset_right = -48.0
-offset_bottom = -54.0
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/RightActionsPanel"]
+[node name="VBox" type="VBoxContainer" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel"]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 162.0
-offset_bottom = 262.0
-theme_override_constants/separation = 6
+theme_override_constants/separation = 4
 
-[node name="BtnFeed" type="Button" parent="UIOverlay/RightActionsPanel/VBox"]
+[node name="FeedButton" type="Button" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "🍙 ごはん"
 
-[node name="BtnTrain" type="Button" parent="UIOverlay/RightActionsPanel/VBox"]
+[node name="TrainButton" type="Button" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
-text = "🏋 とっくん"
+theme_override_font_sizes/font_size = 12
+text = "🏋️ とっくん"
 
-[node name="BtnRest" type="Button" parent="UIOverlay/RightActionsPanel/VBox"]
+[node name="RestButton" type="Button" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "💤 きゅうけい"
 
-[node name="BtnDispatch" type="Button" parent="UIOverlay/RightActionsPanel/VBox"]
+[node name="DispatchButton" type="Button" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
-text = "🗺 おつかい"
+theme_override_font_sizes/font_size = 12
+text = "🗺️ おつかい"
 
-[node name="BtnBattle" type="Button" parent="UIOverlay/RightActionsPanel/VBox"]
+[node name="BattleButton" type="Button" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
-text = "⚔ バトル"
+theme_override_font_sizes/font_size = 12
+text = "⚔️ バトル"
 
-[node name="BtnDex" type="Button" parent="UIOverlay/RightActionsPanel/VBox"]
+[node name="DexButton" type="Button" parent="UI/SafeMarginContainer/MainVBox/MiddleArea/RightActionPanel/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "📖 図鑑"
 
-[node name="BottomMessagePanel" type="PanelContainer" parent="UIOverlay"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = -46.0
-offset_right = -48.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="BottomMessagePanel" type="PanelContainer" parent="UI/SafeMarginContainer/MainVBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="MessageLabel" type="Label" parent="UIOverlay/BottomMessagePanel"]
+[node name="MessageLabel" type="Label" parent="UI/SafeMarginContainer/MainVBox/BottomMessagePanel"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 8.0
-offset_top = 5.0
-offset_right = 780.0
-offset_bottom = 28.0
-text = "モンスターは指示を待っています。"
+theme_override_font_sizes/font_size = 12
+text = "パートナーモンスターはあなたの指示を待っています。"
 vertical_alignment = 1
 
-[node name="FeedPanel" type="PanelContainer" parent="UIOverlay"]
+[node name="FeedPanel" type="PanelContainer" parent="UI"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 1
+custom_minimum_size = Vector2(280, 180)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.0
+offset_left = -140.0
 offset_top = -90.0
-offset_right = 110.0
+offset_right = 140.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/FeedPanel"]
+[node name="VBox" type="VBoxContainer" parent="UI/FeedPanel"]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 212.0
-offset_bottom = 172.0
-theme_override_constants/separation = 4
+theme_override_constants/separation = 6
 
-[node name="Label" type="Label" parent="UIOverlay/FeedPanel/VBox"]
+[node name="Title" type="Label" parent="UI/FeedPanel/VBox"]
 layout_mode = 2
-text = "■ エサをあげる"
+text = "🍙 何を食べさせますか？"
 horizontal_alignment = 1
 
-[node name="BtnFoodMeat" type="Button" parent="UIOverlay/FeedPanel/VBox"]
+[node name="BtnFoodMeat" type="Button" parent="UI/FeedPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "おにく"
 
-[node name="BtnFoodFish" type="Button" parent="UIOverlay/FeedPanel/VBox"]
+[node name="BtnFoodFish" type="Button" parent="UI/FeedPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "さかな"
 
-[node name="BtnFoodBerry" type="Button" parent="UIOverlay/FeedPanel/VBox"]
+[node name="BtnFoodBerry" type="Button" parent="UI/FeedPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "きのみ"
 
-[node name="BtnFoodHerb" type="Button" parent="UIOverlay/FeedPanel/VBox"]
+[node name="BtnFoodHerb" type="Button" parent="UI/FeedPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "まほう草"
 
-[node name="BtnCloseFeed" type="Button" parent="UIOverlay/FeedPanel/VBox"]
+[node name="BtnCloseFeed" type="Button" parent="UI/FeedPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "とじる"
 
-[node name="TrainPanel" type="PanelContainer" parent="UIOverlay"]
+[node name="TrainPanel" type="PanelContainer" parent="UI"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 1
+custom_minimum_size = Vector2(280, 200)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.0
-offset_top = -110.0
-offset_right = 110.0
-offset_bottom = 110.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
-
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/TrainPanel"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 212.0
-offset_bottom = 212.0
-theme_override_constants/separation = 4
-
-[node name="Label" type="Label" parent="UIOverlay/TrainPanel/VBox"]
-layout_mode = 2
-text = "■ とっくんメニュー"
-horizontal_alignment = 1
-
-[node name="BtnTrainHP" type="Button" parent="UIOverlay/TrainPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "HPトレーニング"
-
-[node name="BtnTrainATK" type="Button" parent="UIOverlay/TrainPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "こうげきトレーニング"
-
-[node name="BtnTrainDEF" type="Button" parent="UIOverlay/TrainPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "ぼうぎょトレーニング"
-
-[node name="BtnTrainMAG" type="Button" parent="UIOverlay/TrainPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "まりょくトレーニング"
-
-[node name="BtnTrainSPD" type="Button" parent="UIOverlay/TrainPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "すばやさトレーニング"
-
-[node name="BtnCloseTrain" type="Button" parent="UIOverlay/TrainPanel/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "とじる"
-
-[node name="DispatchPanel" type="PanelContainer" parent="UIOverlay"]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(260, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -130.0
+offset_left = -140.0
 offset_top = -100.0
-offset_right = 130.0
+offset_right = 140.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBox" type="VBoxContainer" parent="UIOverlay/DispatchPanel"]
+[node name="VBox" type="VBoxContainer" parent="UI/TrainPanel"]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 252.0
-offset_bottom = 192.0
 theme_override_constants/separation = 4
 
-[node name="Label" type="Label" parent="UIOverlay/DispatchPanel/VBox"]
+[node name="Title" type="Label" parent="UI/TrainPanel/VBox"]
 layout_mode = 2
-text = "■ おつかい先を選択"
+text = "🏋️ 特訓メニュー選択"
 horizontal_alignment = 1
 
-[node name="BtnAreaForest" type="Button" parent="UIOverlay/DispatchPanel/VBox"]
+[node name="BtnTrainHP" type="Button" parent="UI/TrainPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "はじまりの森 (Lv1~)"
+text = "たいりょく (HP特訓)"
 
-[node name="BtnAreaLake" type="Button" parent="UIOverlay/DispatchPanel/VBox"]
+[node name="BtnTrainATK" type="Button" parent="UI/TrainPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "静寂の湖畔 (Lv5~)"
+text = "こうげき (攻撃特訓)"
 
-[node name="BtnAreaVolcano" type="Button" parent="UIOverlay/DispatchPanel/VBox"]
+[node name="BtnTrainDEF" type="Button" parent="UI/TrainPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "灼熱の火山 (Lv10~)"
+text = "ガード (防御特訓)"
 
-[node name="BtnAreaRuins" type="Button" parent="UIOverlay/DispatchPanel/VBox"]
+[node name="BtnTrainMAG" type="Button" parent="UI/TrainPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "古代の浮遊遺跡 (Lv18~)"
+text = "まほう (魔力特訓)"
 
-[node name="BtnCloseDispatch" type="Button" parent="UIOverlay/DispatchPanel/VBox"]
+[node name="BtnTrainSPD" type="Button" parent="UI/TrainPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "すばやさ (素早さ特訓)"
+
+[node name="BtnCloseTrain" type="Button" parent="UI/TrainPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "とじる"
+
+[node name="DispatchPanel" type="PanelContainer" parent="UI"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(280, 180)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 140.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/DispatchPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="UI/DispatchPanel/VBox"]
+layout_mode = 2
+text = "🗺️ おつかい先を選択"
+horizontal_alignment = 1
+
+[node name="BtnAreaForest" type="Button" parent="UI/DispatchPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "🌲 ちかくのもり (10秒)"
+
+[node name="BtnAreaLake" type="Button" parent="UI/DispatchPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "💧 きよらかなみずうみ (15秒)"
+
+[node name="BtnAreaVolcano" type="Button" parent="UI/DispatchPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "🌋 しゃくねつのかざん (20秒)"
+
+[node name="BtnAreaRuins" type="Button" parent="UI/DispatchPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "🏛️ こだいのいせき (30秒)"
+
+[node name="BtnCloseDispatch" type="Button" parent="UI/DispatchPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "とじる"

@@ -4,45 +4,51 @@ extends Control
 ## 3Dモンスター育成・牧場シーン
 ## バイオリズム管理、エサやり、トレーニング、おつかい派遣、バトル出撃
 
-@onready var label_date_time: Label = %LabelDateTime
-@onready var label_gold: Label = %LabelGold
-@onready var label_monster_header: Label = %LabelMonsterHeader
-
 # バイオリズムメーター
-@onready var bar_hp: ProgressBar = %BarHP
-@onready var bar_mp: ProgressBar = %BarMP
-@onready var bar_hunger: ProgressBar = %BarHunger
-@onready var bar_energy: ProgressBar = %BarEnergy
-@onready var bar_affection: ProgressBar = %BarAffection
-@onready var label_hp: Label = %LabelHP
-@onready var label_mp: Label = %LabelMP
-@onready var label_hunger: Label = %LabelHunger
-@onready var label_energy: Label = %LabelEnergy
-@onready var label_affection: Label = %LabelAffection
+@onready var modular_monster: ModularMonster = %PartnerMonster
+@onready var label_date_time: Label = %DateLabel
+@onready var label_gold: Label = %GoldLabel
+@onready var label_monster_header: Label = %MonsterNameHeader
+
+# ステータスバー
+@onready var bar_hp: ProgressBar = %HPBar
+@onready var label_hp: Label = %HPVal
+@onready var bar_mp: ProgressBar = %MPBar
+@onready var label_mp: Label = %MPVal
+@onready var bar_hunger: ProgressBar = %HungerBar
+@onready var label_hunger: Label = %HungerVal
+@onready var bar_energy: ProgressBar = %EnergyBar
+@onready var label_energy: Label = %EnergyVal
+@onready var bar_affection: ProgressBar = %MoodBar
+@onready var label_affection: Label = %MoodVal
+
+# メインアクションボタン
+@onready var btn_feed: Button = %FeedButton
+@onready var btn_train: Button = %TrainButton
+@onready var btn_rest: Button = %RestButton
+@onready var btn_dispatch: Button = %DispatchButton
+@onready var btn_battle: Button = %BattleButton
+@onready var btn_dex: Button = %DexButton
+
+# メッセージラベル
+@onready var message_label: Label = %MessageLabel
 
 # 3Dモンスター表示
-@onready var modular_monster: ModularMonster = %ModularMonster
 @onready var sub_viewport: SubViewport = %SubViewport
 @onready var directional_light: DirectionalLight3D = %DirectionalLight3D
 @onready var world_env: WorldEnvironment = %WorldEnvironment
-
-# メインコマンドボタン群
-@onready var btn_feed: Button = %BtnFeed
-@onready var btn_train: Button = %BtnTrain
-@onready var btn_rest: Button = %BtnRest
-@onready var btn_dispatch: Button = %BtnDispatch
-@onready var btn_battle: Button = %BtnBattle
-@onready var btn_dex: Button = %BtnDex
 
 # ポップアップ・サブパネル
 @onready var feed_panel: PanelContainer = %FeedPanel
 @onready var train_panel: PanelContainer = %TrainPanel
 @onready var dispatch_panel: PanelContainer = %DispatchPanel
-@onready var message_label: Label = %MessageLabel
 
 var _current_target_area: String = ""
 
 func _ready() -> void:
+	if has_node("%SafeMarginContainer"):
+		SafeAreaHelper.apply_safe_area(%SafeMarginContainer, 52, 8)
+	
 	GameManager.stats_updated.connect(_update_ui)
 	GameManager.day_advanced.connect(_on_day_advanced)
 	

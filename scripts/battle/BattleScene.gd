@@ -43,6 +43,9 @@ var _enemy_defending: bool = false
 var _battle_over: bool = false
 
 func _ready() -> void:
+	if has_node("%SafeMarginContainer"):
+		SafeAreaHelper.apply_safe_area(%SafeMarginContainer, 52, 8)
+	
 	_init_battle()
 	_connect_signals()
 
